@@ -1,8 +1,6 @@
-import sys
 import time
 import unittest
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
@@ -51,8 +49,7 @@ class TestCase1(unittest.TestCase):
         wait.until(EC.url_changes(QAPage.role_url))
 
     def tearDown(self):
-        if sys.exc_info():
-            self.driver.save_screenshot('screenshotTest1.png')
+        self.driver.save_screenshot('screenshots/screenshotTest1.png')
         self.driver.close()
 
 

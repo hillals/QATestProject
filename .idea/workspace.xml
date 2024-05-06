@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5a66369-9e74-44e5-be49-577b53e4e574" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c5a66369-9e74-44e5-be49-577b53e4e574" name="Changes" comment="commit again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCase1.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCase2.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_objects/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_objects/home_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_objects/qa_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_objects/qa_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +82,17 @@
       <option name="presentableId" value="Default" />
       <updated>1714902019422</updated>
       <workItem from="1714902022683" duration="8013000" />
-      <workItem from="1714949048392" duration="14938000" />
+      <workItem from="1714949048392" duration="15556000" />
     </task>
+    <task id="LOCAL-00001" summary="commit again">
+      <option name="closed" value="true" />
+      <created>1714994241585</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714994241585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +108,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit again" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

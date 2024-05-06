@@ -1,5 +1,3 @@
-import sys
-import time
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -32,8 +30,7 @@ class TestCase1(unittest.TestCase):
 
 
     def tearDown(self):
-        if sys.exc_info():
-            self.driver.save_screenshot('screenshotTest2.png')
+        self.driver.save_screenshot('screenshots/screenshotTest2.png')
         self.driver.close()
 
 
