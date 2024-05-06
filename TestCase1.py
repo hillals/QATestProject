@@ -1,3 +1,4 @@
+import sys
 import time
 import unittest
 from selenium import webdriver
@@ -21,35 +22,37 @@ class TestCase1(unittest.TestCase):
         driver.maximize_window()
         driver.get(QAPage.qa_url)
         #  Accept all button
-        element = driver.find_element(By.ID, 'wt-cli-accept-all-btn')
+        element = driver.find_element(By.ID, QAPage.accept_button)
         element.click()
         # See all QA jobs button
-        element = driver.find_element(By.XPATH, '/html/body/div[1]/section[1]/div/div/div/div[1]/div/section/div/div/div[1]/div/div/a')
+        element = driver.find_element(By.XPATH, QAPage.allQA_button)
         element.click()
         #  All jobs dropdown
-        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//span[contains (text(),'Quality Assurance')]")))
-        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//span[contains (text(),'All')]")))
-        drop = driver.find_element(By.XPATH, "//span[contains (text(),'All')]")
+        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, QAPage.QA_dropdown)))
+        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, QAPage.Loc_dropdown)))
+        drop = driver.find_element(By.XPATH, QAPage.Loc_dropdown)
         drop.click()
         time.sleep(2)
         #  Select Istanbul, Turkey
-        option = driver.find_element(By.XPATH, "//li[contains (text(),'Istanbul, Turkey')]")
+        option = driver.find_element(By.XPATH, QAPage.Ist_dropdown)
         option.click()
         #  Check locations and departments
-        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//p[contains (text(),'Quality Assurance')]")))
-        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//p[contains (text(),'QA')]")))
-        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//span[contains (text(),'Quality Assurance')]")))
-        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//div[contains (text(),'Istanbul, Turkey')]")))
+        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, QAPage.position_QualityAssurance)))
+        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, QAPage.position_QA)))
+        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, QAPage.QA_dropdown)))
+        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, QAPage.location_Ist)))
         action = ActionChains(driver)
-        position = driver.find_element(By.XPATH, '//*[@id="jobs-list"]/div[4]/div')
+        #  Move to QA manager to access View Role button
+        position = driver.find_element(By.XPATH, QAPage.position_QAManager)
         action.move_to_element(position).click().perform()
-        button = driver.find_element(By.XPATH, "/html/body/section[3]/div/div/div[2]/div[4]/div/a")
+        button = driver.find_element(By.XPATH, QAPage.btn_ViewRole)
         button.click()
         wait = WebDriverWait(driver, 10)
-        wait.until(EC.url_changes('https://jobs.lever.co/useinsider/285ebdc7-e10b-416d-a636-bab5ec81d852'))
-
+        wait.until(EC.url_changes(QAPage.role_url))
 
     def tearDown(self):
+        if sys.exc_info():
+            self.driver.save_screenshot('screenshotTest1.png')
         self.driver.close()
 
 
